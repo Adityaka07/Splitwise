@@ -19,4 +19,8 @@ public class User {
     {
         return this.userID;
     }
+    @Override public String toString()                                          //used override your because there is atoString() in the class as well as every class, we make in the project is an inherited class to a class called object which has a tostring() function as well, so by default, when we call the toString() function the inherited from the object class. function is called instead of the function in the user class. So we have to override it
+    {
+        return "User{userId='"+this.userID+"',name='"+this.name+"'}";           //merge this function in user class so we can output a clean string whenever we need--when we just try to print the whole object, it just prints the memory address of the object--more in the blog
+    }
 }
