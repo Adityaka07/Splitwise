@@ -23,5 +23,9 @@ public BigDecimal getAmount()
 {
     return this.amount;
 }
+protected void setAmount(BigDecimal amount)
+{
+    this.amount = amount;
+}
 
 }
