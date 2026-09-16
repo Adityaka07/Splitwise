@@ -1,5 +1,7 @@
 package com.splitwise.split;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import com.splitwise.model.User;
 
 public class PercentSplit extends Split {
@@ -20,7 +22,7 @@ public class PercentSplit extends Split {
     }
     public void setAmountFromTotal(BigDecimal totalAmount)
     {
-        setAmount(totalAmount.multiply(BigDecimal.valueOf(percent)).divide(new BigDecimal("100")));                            // always use BigDecimal.valueOf(percent) instead of new BigDecimal(double) because the oduble can by default with apoproximations and the bog decimal would just inherit them
+        setAmount(totalAmount.multiply(BigDecimal.valueOf(percent)).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP));                            // always use BigDecimal.valueOf(percent) instead of new BigDecimal(double) because the oduble can by default with apoproximations and the bog decimal would just inherit them
     }
 }
  
